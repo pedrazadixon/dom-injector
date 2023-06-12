@@ -5,6 +5,9 @@
  * Note: It is not recommended to commit files with credentials such as app_local.php
  * into source code version control.
  */
+
+use Cake\Database\Driver\Sqlite;
+
 return [
     /*
      * Debug Level:
@@ -37,17 +40,11 @@ return [
     'Datasources' => [
         'default' => [
             'host' => 'localhost',
-            /*
-             * CakePHP will use the default DB port based on the driver selected
-             * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
-             * the following line and set the port accordingly
-             */
-            //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'driver' => Sqlite::class,
+            'database' => ROOT . DS . 'dom-injector.db',
+            'encoding' => 'utf8',
+            'mask' => 0644,
             'log' => true,
-            'url' => env('DATABASE_URL', null),
         ],
     ],
 
