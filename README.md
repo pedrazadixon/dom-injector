@@ -1,5 +1,9 @@
 # CakePHP Application
 
+## make config 
+
+copy ```config/app_local.example.php``` to ```config/app_local.php``` and setup your db credentials
+
 ## create db
 
 ```bash
