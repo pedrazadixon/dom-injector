@@ -4,6 +4,10 @@
 
     <div class="row gy-3">
 
+        <div class="col-12 text-end">
+            <?= $this->Html->link(__('Deploy'), ['action' => 'deploy', $element->id], ['class' => 'btn btn-primary']) ?>
+        </div>
+
         <div class="col-12">
             <?= $this->Form->control('title', ['placeholder' => 'title', 'class' => 'form-control form-control-lg', 'label' => false]) ?>
         </div>
