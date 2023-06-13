@@ -9,6 +9,11 @@
 use Cake\Database\Driver\Sqlite;
 
 return [
+
+    'App' => [
+        'name' => 'dom-injector',
+    ],
+
     /*
      * Debug Level:
      *

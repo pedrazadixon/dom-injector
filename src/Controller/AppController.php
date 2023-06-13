@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,31 +13,14 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 
-/**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @link https://book.cakephp.org/3/en/controllers.html#the-app-controller
- */
 class AppController extends Controller
 {
-
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading components.
-     *
-     * e.g. `$this->loadComponent('Security');`
-     *
-     * @return void
-     */
     public function initialize()
     {
         parent::initialize();
@@ -46,10 +30,9 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
-        /*
-         * Enable the following component for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
+        // set default layout 
+        $this->viewBuilder()->setLayout('dom-injector');
+        if ($this->request->params["controller"] === "Pages" && $this->request->params["action"] === "display")
+            $this->viewBuilder()->setLayout('default');
     }
 }
